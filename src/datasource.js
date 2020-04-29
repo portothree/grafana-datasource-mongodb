@@ -6,6 +6,7 @@ export class GenericDatasource {
     this.type = instanceSettings.type;
     this.url = instanceSettings.url;
     this.name = instanceSettings.name;
+    this.db = { 'url' : instanceSettings.jsonData.mongodb_url, 'db' : instanceSettings.jsonData.mongodb_db }
     this.q = $q;
     this.backendSrv = backendSrv;
     this.templateSrv = templateSrv;
@@ -19,15 +20,10 @@ export class GenericDatasource {
   query(options) {
     var query = this.buildQueryParameters(options);
     query.targets = query.targets.filter(t => !t.hide);
+    query.db = this.db
 
     if (query.targets.length <= 0) {
       return this.q.when({data: []});
-    }
-
-    if (this.templateSrv.getAdhocFilters) {
-      query.adhocFilters = this.templateSrv.getAdhocFilters(this.name);
-    } else {
-      query.adhocFilters = [];
     }
 
     return this.doRequest({
@@ -40,10 +36,11 @@ export class GenericDatasource {
   testDatasource() {
     return this.doRequest({
       url: this.url + '/',
-      method: 'GET',
+      data : { db : this.db },
+      method: 'POST',
     }).then(response => {
       if (response.status === 200) {
-        return { status: "success", message: "Data source is working", title: "Success" };
+        return { status: response.data.status, message: response.data.message, title: response.data.display_status };
       }
     });
   }
@@ -67,14 +64,17 @@ export class GenericDatasource {
       method: 'POST',
       data: annotationQuery
     }).then(result => {
-      return result.data;
+      response.data.$$status = result.status;
+      response.data.$$config = result.config;
+    return result.data;
     });
   }
 
   metricFindQuery(query) {
     var interpolated = {
-        target: this.templateSrv.replace(query, null, 'regex')
-    };
+        target: this.templateSrv.replace(query, null, '')
+        };
+    interpolated.db = this.db
 
     return this.doRequest({
       url: this.url + '/search',
@@ -102,17 +102,17 @@ export class GenericDatasource {
   }
 
   buildQueryParameters(options) {
-    //remove placeholder targets
+    //remove place holder targets
     options.targets = _.filter(options.targets, target => {
       return target.target !== 'select metric';
     });
 
     var targets = _.map(options.targets, target => {
       return {
-        target: this.templateSrv.replace(target.target, options.scopedVars, 'regex'),
+        target: this.templateSrv.replace(target.target, options.scopedVars, ''),
         refId: target.refId,
         hide: target.hide,
-        type: target.type || 'timeserie'
+        type: target.type || 'timeserie'      
       };
     });
 
@@ -120,29 +120,4 @@ export class GenericDatasource {
 
     return options;
   }
-
-  getTagKeys(options) {
-    return new Promise((resolve, reject) => {
-      this.doRequest({
-        url: this.url + '/tag-keys',
-        method: 'POST',
-        data: options
-      }).then(result => {
-        return resolve(result.data);
-      });
-    });
-  }
-
-  getTagValues(options) {
-    return new Promise((resolve, reject) => {
-      this.doRequest({
-        url: this.url + '/tag-values',
-        method: 'POST',
-        data: options
-      }).then(result => {
-        return resolve(result.data);
-      });
-    });
-  }
-
 }

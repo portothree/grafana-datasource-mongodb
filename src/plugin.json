@@ -1,6 +1,6 @@
 {
-  "name": "SimpleJson",
-  "id": "grafana-simple-json-datasource",
+  "name": "MongoDB",
+  "id": "grafana-mongodb-datasource",
   "type": "datasource",
 
   "partials": {
@@ -8,28 +8,24 @@
   },
 
   "metrics": true,
-  "annotations": true,
+  "annotations": false,
 
   "info": {
-    "description": "simple json datasource",
-    "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
-    },
+    "description": "MongoDB datasource",
     "logos": {
-      "small": "img/simpleJson_logo.svg",
-      "large": "img/simpleJson_logo.svg"
+      "small": "img/MongoDB_Gray_Logo_FullColor_RGB-01.jpg",
+      "large": "img/MongoDB_Gray_Logo_FullColor_RGB-01.jpg"
     },
     "links": [
       {"name": "GitHub", "url": "https://github.com/grafana/simple-json-datasource"},
       {"name": "MIT License", "url": "https://github.com/grafana/simple-json-datasource/blob/master/LICENSE"}
     ],
-    "version": "1.4.0",
-    "updated": "2018-06-20"
+    "version": "1.0.0",
+    "updated": "2020-04-29"
   },
 
   "dependencies": {
-    "grafanaVersion": "3.x.x",
+    "grafanaVersion": "6.x.x",
     "plugins": [ ]
   }
 }
