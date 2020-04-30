@@ -1,6 +1,6 @@
 # MongoDB to Grafana
 
-This project is based on [simple-json-datasource](http://github.com/grafana/simple-json-datasource) and [mongodb-grafana](https://github.com/JamesOsgood/mongodb-grafana) which both seems to be discontinued at the moment.
+This project is based on [simple-json-datasource](http://github.com/grafana/simple-json-datasource) which seems to be discontinued at the moment.
 
 We are creating a backend that implements 4 endpoints that is necessary to implement custom grafana datasource:
 
@@ -22,3 +22,7 @@ metricFindQuery(options)
 ```
 
 The API is expecting values from the query with the following fields: `name`, `value` and `ts`. To accomplish that we are using the Mongo aggregation pipeline.
+
+Todo:
+- [] Rewrite the express server
+- [] Use gulp instead of grunt to run the tasks
