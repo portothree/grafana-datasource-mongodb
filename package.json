@@ -45,7 +45,7 @@
     "lodash": "^4.17.15",
     "mocha": "^7.1.2",
     "moment": "^2.24.0",
-    "mongodb": "^3.5.7",
+    "mongodb": "^3.5.8",
     "statman-stopwatch": "^2.11.1"
   },
   "homepage": "https://github.com/portothree/mongo-to-grafana#readme"
