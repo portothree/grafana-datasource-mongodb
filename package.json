@@ -43,7 +43,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "lodash": "^4.17.15",
-    "mocha": "^7.1.2",
+    "mocha": "^7.2.0",
     "moment": "^2.24.0",
     "mongodb": "^3.5.7",
     "statman-stopwatch": "^2.11.1"
