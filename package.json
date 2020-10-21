@@ -1,52 +1,41 @@
 {
-  "name": "mongo-to-grafana",
-  "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "server/mongo-proxy.js",
-  "scripts": {
-    "build": "./node_modules/grunt-cli/bin/grunt",
-    "test": "./node_modules/grunt-cli/bin/grunt mochaTest",
-    "server": "cd server && node mongo-proxy.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/portothree/mongo-to-grafana.git"
-  },
-  "bugs": {
-    "url": "https://github.com/portothree/mongo-to-grafana/issues"
-  },
-  "devDependencies": {
-    "babel": "^6.23.0",
-    "chai": "~4.2.0",
-    "grunt": "^1.1.0",
-    "grunt-babel": "^8.0.0",
-    "grunt-cli": "^1.3.2",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-execute": "~0.2.2",
-    "grunt-mocha-test": "^0.13.3",
-    "grunt-systemjs-builder": "^1.0.0",
-    "jsdom": "~16.2.2",
-    "load-grunt-tasks": "^5.1.0",
-    "prunk": "^1.3.1",
-    "q": "^1.5.1"
-  },
-  "dependencies": {
-    "babel-plugin-transform-es2015-for-of": "^6.23.0",
-    "babel-plugin-transform-es2015-modules-systemjs": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "body-parser": "^1.19.0",
-    "config": "^3.3.1",
-    "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "lodash": "^4.17.15",
-    "mocha": "^7.1.2",
-    "moment": "^2.24.0",
-    "mongodb": "^3.5.7",
-    "statman-stopwatch": "^2.11.1"
-  },
-  "homepage": "https://github.com/portothree/mongo-to-grafana#readme"
+	"name": "mongo-to-grafana",
+	"private": true,
+	"version": "1.0.0",
+	"description": "",
+	"main": "server/mongo-proxy.js",
+	"scripts": {
+		"build": "gulp",
+		"test": "./node_modules/grunt-cli/bin/grunt mochaTest",
+		"server": "cd server && node mongo-proxy.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/portothree/mongo-to-grafana.git"
+	},
+	"bugs": {
+		"url": "https://github.com/portothree/mongo-to-grafana/issues"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.3",
+		"@babel/preset-env": "^7.12.1",
+		"chai": "~4.2.0",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"jsdom": "~16.2.2",
+		"prunk": "^1.3.1",
+		"q": "^1.5.1"
+	},
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"config": "^3.3.1",
+		"express": "^4.17.1",
+		"fs": "0.0.1-security",
+		"lodash": "^4.17.15",
+		"mocha": "^7.1.2",
+		"moment": "^2.24.0",
+		"mongodb": "^3.5.7",
+		"statman-stopwatch": "^2.11.1"
+	},
+	"homepage": "https://github.com/portothree/mongo-to-grafana#readme"
 }
