@@ -19,6 +19,8 @@
 	"devDependencies": {
 		"@babel/core": "^7.12.3",
 		"@babel/preset-env": "^7.12.1",
+		"babel-plugin-transform-es2015-for-of": "^6.23.0",
+		"babel-plugin-transform-es2015-modules-systemjs": "^6.24.1",
 		"chai": "~4.2.0",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",

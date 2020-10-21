@@ -3,7 +3,15 @@ const babel = require('gulp-babel');
 
 function script() {
 	return src('src/**/*.js')
-		.pipe(babel({ presets: ['@babel/env'] }))
+		.pipe(
+			babel({
+				presets: ['@babel/env'],
+				plugins: [
+					'transform-es2015-modules-systemjs',
+					'transform-es2015-for-of',
+				],
+			})
+		)
 		.pipe(dest('dist'));
 }
 
