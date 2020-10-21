@@ -1,6 +1,6 @@
 # MongoDB to Grafana
 
-This project is based on [simple-json-datasource](http://github.com/grafana/simple-json-datasource) which seems to be discontinued at the moment.
+This project is based on [simple-json-datasource](http://github.com/grafana/simple-json-datasource) and [mongodb-grafana](https://github.com/JamesOsgood/mongodb-grafana) which both seems to be discontinued at the moment.
 
 We are creating a backend that implements 4 endpoints that is necessary to implement custom grafana datasource:
 
