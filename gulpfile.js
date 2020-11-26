@@ -5,7 +5,7 @@ function script() {
 	return src('src/**/*.js')
 		.pipe(
 			babel({
-				presets: ['@babel/env'],
+				presets: ['es2015'],
 				plugins: [
 					'transform-es2015-modules-systemjs',
 					'transform-es2015-for-of',
