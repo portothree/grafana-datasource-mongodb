@@ -6,7 +6,7 @@
 	"main": "server/mongo-proxy.js",
 	"scripts": {
 		"build": "gulp",
-		"test": "./node_modules/grunt-cli/bin/grunt mochaTest",
+		"test": "echo 'No test found'",
 		"server": "cd server && node mongo-proxy.js"
 	},
 	"repository": {
