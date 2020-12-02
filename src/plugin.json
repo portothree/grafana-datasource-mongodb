@@ -1,31 +1,38 @@
 {
-  "name": "MongoDB",
-  "id": "grafana-mongodb-datasource",
-  "type": "datasource",
+	"name": "MongoDB",
+	"id": "grafana-mongodb-datasource",
+	"type": "datasource",
 
-  "partials": {
-    "config": "public/app/plugins/datasource/simplejson/partials/config.html"
-  },
+	"partials": {
+		"config": "public/app/plugins/datasource/simplejson/partials/config.html"
+	},
 
-  "metrics": true,
-  "annotations": false,
+	"metrics": true,
+	"annotations": false,
 
-  "info": {
-    "description": "MongoDB datasource",
-    "logos": {
-      "small": "img/MongoDB_Gray_Logo_FullColor_RGB-01.jpg",
-      "large": "img/MongoDB_Gray_Logo_FullColor_RGB-01.jpg"
-    },
-    "links": [
-      {"name": "GitHub", "url": "https://github.com/grafana/simple-json-datasource"},
-      {"name": "MIT License", "url": "https://github.com/grafana/simple-json-datasource/blob/master/LICENSE"}
-    ],
-    "version": "1.0.0",
-    "updated": "2020-04-29"
-  },
+	"info": {
+		"description": "MongoDB datasource",
+		"author": "Gustavo Porto",
+		"logos": {
+			"small": "img/MongoDB_Gray_Logo_FullColor_RGB-01.jpg",
+			"large": "img/MongoDB_Gray_Logo_FullColor_RGB-01.jpg"
+		},
+		"links": [
+			{
+				"name": "GitHub",
+				"url": "https://github.com/portothree/mongo-to-grafana"
+			},
+			{
+				"name": "MIT License",
+				"url": "https://github.com/portothree/mongo-to-grafana/blob/master/LICENSE"
+			}
+		],
+		"version": "1.1.0",
+		"updated": "2020-12-02"
+	},
 
-  "dependencies": {
-    "grafanaVersion": "6.x.x",
-    "plugins": [ ]
-  }
+	"dependencies": {
+		"grafanaVersion": "6.x.x",
+		"plugins": []
+	}
 }
