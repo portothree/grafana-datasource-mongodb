@@ -1,8 +1,8 @@
 {
 	"name": "MongoDB",
-	"id": "grafana-mongodb-datasource",
+	"id": "mongo-to-grafana",
 	"type": "datasource",
-
+	"backend": true,
 	"partials": {
 		"config": "public/app/plugins/datasource/simplejson/partials/config.html"
 	},
@@ -12,7 +12,10 @@
 
 	"info": {
 		"description": "MongoDB datasource",
-		"author": "Gustavo Porto",
+		"author": {
+			"name": "Gustavo Porto",
+			"url": "https://github.com/portothree"
+		},
 		"logos": {
 			"small": "img/MongoDB_Gray_Logo_FullColor_RGB-01.jpg",
 			"large": "img/MongoDB_Gray_Logo_FullColor_RGB-01.jpg"
@@ -27,10 +30,9 @@
 				"url": "https://github.com/portothree/mongo-to-grafana/blob/master/LICENSE"
 			}
 		],
-		"version": "1.1.0",
+		"version": "1.1.1",
 		"updated": "2020-12-02"
 	},
-
 	"dependencies": {
 		"grafanaVersion": "6.x.x",
 		"plugins": []
