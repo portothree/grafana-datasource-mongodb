@@ -7,6 +7,7 @@ const assert = require('assert');
 var config = require('config');
 var Stopwatch = require("statman-stopwatch");
 var moment = require('moment')
+const serverConfig = require('./config/default.json').server;
 
 app.use(bodyParser.json());
 
@@ -168,9 +169,6 @@ app.use(function(error, req, res, next)
   // response with the error message
   res.status(500).json({ message: error.message });
 });
-
-// Get config from server/default.json
-var serverConfig = config.get('server');
 
 app.listen(serverConfig.port);
 
