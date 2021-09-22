@@ -26,7 +26,7 @@ metricFindQuery(options);
 
 The API is expecting values from the query with the following fields: `name`, `value` and `ts`. To accomplish that we are using the Mongo aggregation pipeline.
 
-## Prerequisite
+## Prerequisites
 
 - Grafana 6.x.x
 - Node 10.x
