@@ -6,10 +6,10 @@ This project is based on [simple-json-datasource](http://github.com/grafana/simp
 
 We are creating a backend that implements 4 endpoints that is necessary to implement custom grafana datasource:
 
--   `/` Used for test the connection with the datasource
--   `/search` Used by the query tab in panels
--   `/query` Return metrics based on input
--   `/annontations` Return annotations
+- `/` Used for test the connection with the datasource
+- `/search` Used by the query tab in panels
+- `/query` Return metrics based on input
+- `/annontations` Return annotations
 
 Inside the `server` folder there's a express server that exposes these endpoints and make the proxy to the mongodb.
 
@@ -24,20 +24,28 @@ annotationQuery(options);
 metricFindQuery(options);
 ```
 
+The API is expecting values from the query with the following fields: `name`, `value` and `ts`. To accomplish that we are using the Mongo aggregation pipeline.
+
 ## Prerequisite
 
--   Grafana 6.x.x
--   Node 10.x
+- Grafana 6.x.x
+- Node 10.x
 
-The API is expecting values from the query with the following fields: `name`, `value` and `ts`. To accomplish that we are using the Mongo aggregation pipeline.
+## Installation
+
+1. Run the server with `npm run server` or `node server/mongo-proxy.js`, its defaults to port `3333`.
+2. Clone the project in `/usr/local/var/lib/grafana/plugins` folder
+3. Build the plugin front end with `npm run build` or `npx gulp`
+4. Make sure the `dist` folder was created
+5. Restart the Grafana server. If installed via Homebrew, this can be done with `brew services restart grafana`
 
 ## Usage
 
 ### Query Editor
 
--   Only **aggregate** are supported.
--   You can only run one query.
--   `$from` and `$to` are expanded by the plugin as BSON dates based on the range defined in the UI.
+- Only **aggregate** are supported.
+- You can only run one query.
+- `$from` and `$to` are expanded by the plugin as BSON dates based on the range defined in the UI.
 
 ### Visualizing time series data
 
@@ -74,5 +82,5 @@ db.measurement.aggregate([
 
 Todo:
 
--   [] Rewrite the express server
--   [x] Use gulp instead of grunt to run the tasks
+- [] Rewrite the express server
+- [x] Use gulp instead of grunt to run the tasks
