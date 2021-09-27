@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>mongodb-grafana-proxy</string>
+    <string>mongo-to-grafana-proxy</string>
 
     <key>EnvironmentVariables</key>
     <dict>
@@ -12,20 +12,20 @@
     </dict>
 
     <key>WorkingDirectory</key>
-    <string>/usr/local/var/lib/grafana/plugins/mongodb-grafana/dist/server</string>
+    <string>/usr/local/var/lib/grafana/plugins/mongo-to-grafana/dist/server</string>
 
        <key>ProgramArguments</key>
         <array>
             <string>/usr/local/lib/npm-packages/bin/forever</string>
             <string>-l</string>
-            <string>/usr/local/var/lib/grafana/plugins/mongodb-grafana/dist/server/mongodb-proxy-forever.log</string>
+            <string>/usr/local/var/lib/grafana/plugins/mongo-to-grafana/dist/server/mongodb-proxy-forever.log</string>
             <string>-o</string>
-            <string>/usr/local/var/lib/grafana/plugins/mongodb-grafana/dist/server/mongodb-proxy.log</string>
+            <string>/usr/local/var/lib/grafana/plugins/mongo-to-grafana/dist/server/mongodb-proxy.log</string>
             <string>-e</string>
-            <string>/usr/local/var/lib/grafana/plugins/mongodb-grafana/dist/server/mongodb-proxy-err.log</string>
+            <string>/usr/local/var/lib/grafana/plugins/mongo-to-grafana/dist/server/mongodb-proxy-err.log</string>
             <string>--workingDir</string>
-            <string>/usr/local/var/lib/grafana/plugins/mongodb-grafana/dist/server</string>
-            <string>/usr/local/var/lib/grafana/plugins/mongodb-grafana/dist/server/mongodb-proxy.js</string>
+            <string>/usr/local/var/lib/grafana/plugins/mongo-to-grafana/dist/server</string>
+            <string>/usr/local/var/lib/grafana/plugins/mongo-to-grafana/dist/server/mongodb-proxy.js</string>
         </array>
  
     <key>RunAtLoad</key>
