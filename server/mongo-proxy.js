@@ -230,19 +230,37 @@ function parseQuery(query, substitutions)
     }
   
     // Args is the rest up to the last bracket
-    var closeBracketIndex = query.indexOf(')', openBracketIndex)
-    if (closeBracketIndex == -1)
+    const potentialPipelineEnding = ['])', '],'];
+
+    const pipelineEnd = potentialPipelineEnding.find(end => query.indexOf(end, openBracketIndex) !== -1);
+    const pipelineEndIndex = query.indexOf(pipelineEnd, openBracketIndex);
+
+    if (!pipelineEnd)
     {
       queryErrors.push("Can't find last bracket")
     }
     else
     {
-      var args = query.substring(openBracketIndex + 1, closeBracketIndex)
+      var args = query.substring(openBracketIndex + 1, pipelineEndIndex)
       if ( doc.operation == 'aggregate')
       {
         // Wrap args in array syntax so we can check for optional options arg
-        args = '[' + args + ']'
-        docs = JSON.parse(args)
+        args = '[' + args + ']]'
+
+        docs = ((raw) => {
+          try {
+            const data = JSON.parse(raw);
+            return data;
+          }
+          catch (error) {
+            return null;
+          }
+        })(args);
+
+        if (!docs) {
+          queryErrors.push("Invalid query syntax");
+        }
+
         // First Arg is pipeline
         doc.pipeline = docs[0]
         // If we have 2 top level args, second is agg options
