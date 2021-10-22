@@ -2,8 +2,8 @@
     "server": 
     {
       "port": 3333,
-      "logRequests": true,
-      "logQueries": true,
+      "logRequests": false,
+      "logQueries": false,
       "logTimings": false
     }
 }
