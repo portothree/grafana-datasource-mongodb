@@ -34,10 +34,11 @@ The API is expecting values from the query with the following fields: `name`, `v
 ## Installation
 
 1. Run the server with `npm run server` or `node server/mongo-proxy.js`, its defaults to port `3333`.
-2. Clone the project in `/usr/local/var/lib/grafana/plugins` folder
+2. Clone the project in the `/usr/local/var/lib/grafana/plugins` folder
 3. Build the plugin front end with `npm run build` or `npx gulp`
 4. Make sure the `dist` folder was created
-5. Restart the Grafana server. If installed via Homebrew, this can be done with `brew services restart grafana`
+5. Set the `GF_PLUGIN_ALLOW_LOADING_UNSIGNED_PLUGINS` env var to `mongo-to-grafana` or add `allow_loading_unsigned_plugins = mongo-to-grafana` to your `grafana.ini` file inside the `[plugins]` section
+6. Restart the Grafana server. If installed via Homebrew, this can be done with `brew services restart grafana`
 
 ## Usage
 
