@@ -2,9 +2,9 @@
     "server": 
     {
       "port": 3000,
-      "logRequests": false,
-      "logQueries": false,
-      "logTimings": false
+      "logRequests": true,
+      "logQueries": true,
+      "logTimings": true 
     }
 }
   
