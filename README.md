@@ -37,7 +37,7 @@ The API is expecting values from the query with the following fields: `name`, `v
 2. Clone the project in the `/usr/local/var/lib/grafana/plugins` folder
 3. Build the plugin front end with `npm run build` or `npx gulp`
 4. Make sure the `dist` folder was created
-5. Set the `GF_PLUGIN_ALLOW_LOADING_UNSIGNED_PLUGINS` env var to `mongo-to-grafana` or add `allow_loading_unsigned_plugins = mongo-to-grafana` to your `grafana.ini` file inside the `[plugins]` section
+5. Set the `GF_PLUGIN_ALLOW_LOADING_UNSIGNED_PLUGINS` env var to `grafana-datasource-mongodb` or add `allow_loading_unsigned_plugins = grafana-datasource-mongodb` to your `grafana.ini` file inside the `[plugins]` section
 6. Restart the Grafana server. If installed via Homebrew, this can be done with `brew services restart grafana`
 
 ## Usage
