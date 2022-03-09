@@ -1,6 +1,6 @@
 {
 	"name": "MongoDB",
-	"id": "mongo-to-grafana",
+	"id": "grafana-datasource-mongodb",
 	"type": "datasource",
 	"backend": true,
 	"partials": {
@@ -23,11 +23,11 @@
 		"links": [
 			{
 				"name": "GitHub",
-				"url": "https://github.com/portothree/mongo-to-grafana"
+				"url": "https://github.com/portothree/grafana-datasource-mongodb"
 			},
 			{
 				"name": "MIT License",
-				"url": "https://github.com/portothree/mongo-to-grafana/blob/master/LICENSE"
+				"url": "https://github.com/portothree/grafana-datasource-mongodb/blob/master/LICENSE"
 			}
 		],
 		"version": "1.1.1",

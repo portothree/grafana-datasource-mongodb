@@ -1,5 +1,5 @@
 {
-	"name": "mongo-to-grafana",
+	"name": "grafana-datasource-mongodb",
 	"private": true,
 	"version": "1.1.3",
 	"description": "",
@@ -11,10 +11,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/portothree/mongo-to-grafana.git"
+		"url": "git+https://github.com/portothree/grafana-datasource-mongodb.git"
 	},
 	"bugs": {
-		"url": "https://github.com/portothree/mongo-to-grafana/issues"
+		"url": "https://github.com/portothree/grafana-datasource-mongodb/issues"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.3",
@@ -39,5 +39,5 @@
 		"mongodb": "^3.5.7",
 		"statman-stopwatch": "^2.11.1"
 	},
-	"homepage": "https://github.com/portothree/mongo-to-grafana#readme"
+	"homepage": "https://github.com/portothree/grafana-datasource-mongodb#readme"
 }
