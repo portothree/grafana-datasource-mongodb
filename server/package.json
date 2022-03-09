@@ -1,0 +1,23 @@
+{
+  "name": "mongodb-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mongo-proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "config": "^3.3.7",
+    "express": "^4.17.3",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "mocha": "^9.2.1",
+    "moment": "^2.29.1",
+    "mongodb": "^4.4.1",
+    "statman-stopwatch": "^2.13.0"
+  }
+}
