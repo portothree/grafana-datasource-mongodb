@@ -33,7 +33,7 @@ The API is expecting values from the query with the following fields: `name`, `v
 
 ## Installation
 
-1. Run the server with `npm run server` or `node server/mongo-proxy.js`, its defaults to port `3333`.
+1. Run the server with `npm run server` or `node server/mongo-proxy.js`, its defaults to port `3000`.
 2. Clone the project in the `/usr/local/var/lib/grafana/plugins` folder
 3. Build the plugin front end with `npm run build` or `npx gulp`
 4. Make sure the `dist` folder was created

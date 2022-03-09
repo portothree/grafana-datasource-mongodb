@@ -1,7 +1,7 @@
 {
     "server": 
     {
-      "port": 3333,
+      "port": 3000,
       "logRequests": false,
       "logQueries": false,
       "logTimings": false
